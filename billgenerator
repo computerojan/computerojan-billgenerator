@@ -104,15 +104,22 @@ int main() {
     totalbill = bill + ( bill * 0.18);
 
   // Displaying the bill 
-    printf("\nNAME: %s\n", name);
-    printf("\nAADHAR ID: %lld\n", aadhar);
-    printf("\nMOBILE NO: %lld\n", number);
-    printf("\nNUMBER OF GUESTS: %d\n", guests);
-    printf("\nNUMBER OF DAYS: %d\n", d);
-    printf("\nTOTAL BILL: %.2f RS\n", totalbill);
-    printf("\nYOUR CHECK IN TIME IS 10 AM\n");
-    printf("\nYOUR CHECK OUT TIME IS 9 AM\n");
-    
+   
+ printf("\n✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭ BILL SUMMARY ✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭\n");
+    printf("                    HOTEL RESERVATION                  \n");
+    printf("=======================================================\n");
+    printf("\nNAME             : %s\n", name);
+    printf("AADHAR ID          : %lld\n", aadhar);
+    printf("MOBILE NO          : %lld\n", number);
+    printf("NUMBER OF GUESTS   : %d\n", guests);
+    printf("NUMBER OF DAYS     : %d\n", d);
+    printf("BILL               : %.2f RS\n",bill);
+    printf("BILL WITH GST      : %.2f RS\n",totalbill);
+    printf("CHECK IN TIME      : 10 AM\n");
+    printf("CHECK OUT TIME     : 9 AM\n");
+    printf("=======================================================\n");
+    printf("              THANK YOU FOR CHOOSING US!             \n");
+    printf("✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭\n");
     
     return 0;
 }
