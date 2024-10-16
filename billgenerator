@@ -1,0 +1,118 @@
+#include <stdio.h>
+#include <string.h>
+
+// Function to check the length of a number
+int intlen(long long number) {
+    int len = 0;
+    while (number != 0) {
+        number /= 10;
+        len++;
+    }
+    return len;
+}
+
+// Function to check the length of the Aadhar ID
+int aadharlen(long long i) {
+    int len = 0;
+    while (i != 0) {
+        i /= 10;
+        len++;
+    }
+    return len;
+}
+
+int main() {
+    int choice, d;
+    long long number, aadhar; 
+    char name[100];
+    int guests;
+    float totalbill,bill;
+    float prices[] = {0, 2000, 3500, 1500, 2500, 3000, 5500, 2500, 4000};
+
+    printf("\n    WELCOME TO PARADISE HOTEL  \n"
+           "\nWE PROVIDE THESE SERVICES \n"
+           "\n1] SINGLE BED AC ROOMS - 2000RS PER DAY\n"
+           "\n2] DOUBLE BED AC ROOMS - 3500RS PER DAY\n"
+           "\n3] SINGLE BED NON AC ROOMS - 1500RS PER DAY\n"
+           "\n4] DOUBLE BED NON AC ROOMS - 2500RS PER DAY\n"
+           "\n5] SINGLE BED AC ROOMS WITH 3 TIME MEAL - 3000RS PER DAY\n"
+           "\n6] DOUBLE BED AC ROOMS WITH 3 TIME MEAL - 5500RS PER DAY\n"
+           "\n7] SINGLE BED NON AC ROOMS WITH 3 TIME MEAL - 2500RS PER DAY\n"
+           "\n8] DOUBLE BED NON AC ROOMS WITH 3 TIME MEAL - 4000RS PER DAY\n");
+
+    // Corrected choice validation
+    while (1) {
+        printf("\nENTER YOUR CHOICE (1-8):  \n");
+        scanf("%d", &choice);
+        if (choice >= 1 && choice <= 8) { 
+            break;
+        } else {
+            printf("PROVIDE A VALID CHOICE\n");
+        }
+    }
+    
+    printf("\nENTER YOUR NAME:  \n");
+    scanf("%s", name);
+
+    // Loop to validate Aadhar ID
+    while (1) {
+        printf("\nENTER YOUR AADHAR ID (12 digits):  \n");
+        scanf("%lld", &aadhar); 
+        
+        if (aadharlen(aadhar) == 12) { 
+            break; 
+        } else {
+            printf("INVALID AADHAR ID. PLEASE ENTER A 12-DIGIT NUMBER\n");
+        }
+    }
+
+    // Loop to validate mobile number
+    while (1) {
+        printf("\nENTER YOUR MOBILE NO (10 digits): \n");
+        scanf("%lld", &number);
+        
+        if (intlen(number) == 10) {
+            break; 
+        } else {
+            printf("INVALID MOBILE NUMBER. PLEASE ENTER EXACTLY 10 DIGITS\n");
+        }
+    }
+
+     // Validate the number of guests
+    while (1) {
+        printf("\nENTER THE NUMBER OF GUESTS (1 or more):  \n");
+        scanf("%d", &guests);
+        if (guests > 0) {
+            break; 
+        } else {
+            printf("INVALID NUMBER OF GUESTS. PLEASE ENTER A POSITIVE NUMBER\n");
+        }
+    }
+    
+    // Validate the number of days
+    while (1) {
+        printf("\nENTER THE NUMBER OF DAYS TO STAY (1 or more):  \n");
+        scanf("%d", &d);
+        if (d > 0) {
+            break; 
+        } else {
+            printf("INVALID NUMBER OF DAYS. PLEASE ENTER A POSITIVE NUMBER\n");
+        }
+    }
+
+    bill = prices[choice] * d;
+    totalbill = bill + ( bill * 0.18);
+
+  // Displaying the bill 
+    printf("\nNAME: %s\n", name);
+    printf("\nAADHAR ID: %lld\n", aadhar);
+    printf("\nMOBILE NO: %lld\n", number);
+    printf("\nNUMBER OF GUESTS: %d\n", guests);
+    printf("\nNUMBER OF DAYS: %d\n", d);
+    printf("\nTOTAL BILL: %.2f RS\n", totalbill);
+    printf("\nYOUR CHECK IN TIME IS 10 AM\n");
+    printf("\nYOUR CHECK OUT TIME IS 9 AM\n");
+    
+    
+    return 0;
+}
