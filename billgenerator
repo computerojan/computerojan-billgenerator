@@ -108,7 +108,7 @@ int main() {
  printf("\n✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭ BILL SUMMARY ✭✭✭✭✭✭✭✭✭✭✭✭✭✭✭\n");
     printf("                    HOTEL RESERVATION                  \n");
     printf("=======================================================\n");
-    printf("\nNAME             : %s\n", name);
+    printf("\nNAME               : %s\n", name);
     printf("AADHAR ID          : %lld\n", aadhar);
     printf("MOBILE NO          : %lld\n", number);
     printf("NUMBER OF GUESTS   : %d\n", guests);
